@@ -137,7 +137,7 @@ func (c *client) GetPartition(topic string, config manage.ClientConfig) int {
 	return int(p.GetPartitions())
 }
 
-func TopicForAccessID(accessID string) string {
-	topic := fmt.Sprintf("persistent://%s/out/event", accessID)
+func TopicForAccessID(accessID string,env string) string {
+	topic := fmt.Sprintf("persistent://%s/out/%s", accessID,env)
 	return topic
 }
